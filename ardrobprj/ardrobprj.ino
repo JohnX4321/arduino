@@ -1,26 +1,18 @@
-#define fwl1
-#define fwl2
-#define fwr1
-#define fwr2
-#define bwl1
-#define bwl2
-#define bwr1
-#define bwr2
-#define prop
-#define btx
-#define brx
+#define lw1 4
+#define lw2 5
+#define rw1 2
+#define rw2 3
+#define prop 8
+#define btx 1
+#define brx 0
 
 
 void setup() {
   // put your setup code here, to run once:
-pinMode(fwl1,OUTPUT);
-pinMode(fwl2,OUTPUT);
-pinMode(fwr1,OUTPUT);
-pinMode(fwr2,OUTPUT);
-pinMode(bwl1,OUTPUT);
-pinMode(bwl2,OUTPUT);
-pinMode(bwr1,OUTPUT);
-pinMode(bwr2,OUTPUT);
+pinMode(lw1,OUTPUT);
+pinMode(lw2,OUTPUT);
+pinMode(rw1,OUTPUT);
+pinMode(rw2,OUTPUT);
 pinMode(brx,INPUT);
 pinMode(btx,OUTPUT);
 pinMode(prop,OUTPUT);
@@ -32,58 +24,38 @@ void loop() {
   digitalRead(brx);
   if(brx=='W')
   {
-    digitalWrite(fwl1,1);
-    digitalWrite(fwl2,0);
-    digitalWrite(fwr1,1);
-    digitalWrite(fwr2,0);
-    digitalWrite(bwl1,1);
-    digitalWrite(bwl2,0);
-    digitalWrite(bwr1,1);
-    digitalWrite(bwr2,0);
+    digitalWrite(lw1,1);
+    digitalWrite(lw2,0);
+    digitalWrite(rw1,1);
+    digitalWrite(rw2,0);
     digitalWrite(prop,1);
-  }
+   }
   else if(brx=='S')
   {
-    digitalWrite(fwl1,0);
-    digitalWrite(fwl2,1);
-    digitalWrite(fwr1,0);
-    digitalWrite(fwr2,1);
-    digitalWrite(bwl1,0);
-    digitalWrite(bwl2,1);
-    digitalWrite(bwr1,0);
-    digitalWrite(bwr2,1);
+    digitalWrite(lw1,0);
+    digitalWrite(lw2,1);
+    digitalWrite(rw1,0);
+    digitalWrite(rw2,1);
   }
-  else if(brx=='H')
+  else if(brx=='A')
   {
-    digitalWrite(fwl1,0);
-    digitalWrite(fwl2,0);
-    digitalWrite(fwr1,0);
-    digitalWrite(fwr2,0);
-    digitalWrite(bwl1,0);
-    digitalWrite(bwl2,0);
-    digitalWrite(bwr1,0);
-    digitalWrite(bwr2,0);
+    digitalWrite(lw1,0);
+    digitalWrite(lw2,0);
+    digitalWrite(rw1,1);
+    digitalWrite(rw2,0);
   }
   else if(brx=='D')
   {
-    digitalWrite(fwl1,1);
-    digitalWrite(fwl2,0);
-    digitalWrite(fwr1,1);
-    digitalWrite(fwr2,0);
-    digitalWrite(bwl1,0);
-    digitalWrite(bwl2,0);
-    digitalWrite(bwr1,0);
-    digitalWrite(bwr2,0);
+    digitalWrite(lw1,1);
+    digitalWrite(lw2,0);
+    digitalWrite(rw1,0);
+    digitalWrite(rw2,0);
   }
   else
   {
-    digitalWrite(fwl1,0);
-    digitalWrite(fwl2,0);
-    digitalWrite(fwr1,0);
-    digitalWrite(fwr2,0);
-    digitalWrite(bwl1,1);
-    digitalWrite(bwl2,0);
-    digitalWrite(bwr1,1);
-    digitalWrite(bwr2,0);
+    digitalWrite(lw1,0);
+    digitalWrite(lw2,0);
+    digitalWrite(rw1,0);
+    digitalWrite(rw2,0);
   }
 }
