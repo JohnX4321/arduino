@@ -1,3 +1,7 @@
+#include<Servo.h>
+
+Servo esc;
+
 #define lw1 4
 #define lw2 5
 #define rw1 2
@@ -16,11 +20,24 @@ pinMode(rw2,OUTPUT);
 pinMode(brx,INPUT);
 pinMode(btx,OUTPUT);
 pinMode(prop,OUTPUT);
+
+esc.attach(prop);
+
+esc.writeMicroseconds(1000);
+
+Serial.begin(9600);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 
+int val;
+
+val=analogRead(A0);
+
+val=map(val,o,1023,1000,2000);
+
+esc.writeMicroseconds(val);
   digitalRead(brx);
   if(brx=='W')
   {
