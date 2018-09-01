@@ -25,33 +25,33 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int x=digitalRead(bl);
-  int y=digitalRead(br);
-  int z=digitalRead(wl);
+  int x=digitalRead(wl);
+  int y=digitalRead(bl);
+  int z=digitalRead(br);
   int a=digitalRead(wr);
 
-  if(x==0&&y==0&&a==1&z==1||x==0&&y==0&&z==0&&a==0)
+  if(x==0&&y==1&&z==1&&a==0)
   {
     digitalWrite(lm1,1);
     digitalWrite(lm2,0);
     digitalWrite(rm1,1);
     digitalWrite(rm2,0);
   }
-  else if(x==0&&z==0&&y==1&&a==1||z==0&&x==1&&y==1&&a==1||x==1&&y==1&&z==1&&a==1)
+  else if(x==1&&y==0&&z==0&&a==0||x==1&&y==1&&z==0&&a==0||x==0&&y==1&&z==0&&a==0)
   {
     digitalWrite(lm1,0);
     digitalWrite(lm2,0);
     digitalWrite(rm1,1);
     digitalWrite(rm2,0);
   }
-  else if(x==1&&y==1&&y==0&&a==0||a==0&&x==1&&y==1&&z==0)
+  else if(x==0&&y==0&&z==1&&a==1||x==0&&y==0&&z==0&&a==1&&x==0||x==0&&y==0&&z==1&&a==0)
   {
     digitalWrite(lm1,1);
     digitalWrite(lm2,0);
     digitalWrite(rm1,0);
     digitalWrite(rm2,0);
   }
-  else
+  else 
   {
     digitalWrite(lm1,0);
     digitalWrite(lm2,0);
